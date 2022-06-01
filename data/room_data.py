@@ -1,5 +1,6 @@
-from lib.models.entity import Room, Exit, DescriptionItem
+#from lib.models.entity import Exit
 from lib.models.enums import ExitType
+from lib.models.room import Room, Exit
 import sqlite3
 from data import connection, cursor
 

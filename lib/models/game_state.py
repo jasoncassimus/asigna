@@ -16,10 +16,10 @@ class GameState(object):
         self.server.update()
 
     def add_player(self, player: Player):
-        self.players[player.uuid] = player
+        self.players[player.id] = player
 
     def remove_player(self, player: Player):
-        del(self.players[player.uuid])
+        del(self.players[player.id])
 
     def list_players(self):
         for player in self.players.values():
@@ -27,7 +27,7 @@ class GameState(object):
 
     def list_other_players(self, exclude_player: Player):
         for player in self.list_players():
-            if player.uuid != exclude_player.uuid:
+            if player.id != exclude_player.id:
                 yield player
 
     def handle_player_join(self):

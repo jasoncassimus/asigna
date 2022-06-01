@@ -5,7 +5,7 @@ from data.world_data import add_continent, add_zone
 from lib.models.player import Player
 from lib.models.continent import Continent
 from lib.models.zone import Zone
-from lib.models.entity import Room
+from lib.models.room import Room
 
 
 class Commands(object):

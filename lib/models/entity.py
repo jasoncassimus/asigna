@@ -1,4 +1,3 @@
-import uuid
 
 from typing import List, Dict
 
@@ -7,7 +6,7 @@ from lib.models.enums import ExitType, LightLevel, Obscuration
 
 class Entity(object):
     def __init__(self, name=None, description=None):
-        self.uuid = uuid.uuid4()
+        self.id = 0
         self.name = name
         self.description = description
 
@@ -38,15 +37,15 @@ class DescriptionItem():
 
 class Room(Entity):
 
-    def __init__(self, 
-                 name: str, 
+    def __init__(self,
+                 name: str,
                  description: str,
                  description_items: List[DescriptionItem] = None,
                  exits: List[Exit] = None,
                  light_level: LightLevel = LightLevel.BRIGHT,
                  obscuration: Obscuration = Obscuration.NONE,
                  ):
-        self.uuid = uuid.uuid4()
+        self.id = 0
         self.description_items = description_items
         self.light_level = light_level
         self.obscuration = obscuration
@@ -78,19 +77,19 @@ class Inventory(object):
         self.inventory = {}
 
     def add_item(self, item: Entity) -> str:
-        self.inventory[item.uuid] = item
+        self.inventory[item.id] = item
         return f"{item.name} added!"
 
     def remove_item(self, item: Entity) -> str:
-        i = self.inventory.get(item.uuid)
+        i = self.inventory.get(item.id)
         if i:
-            self.inventory.pop(item.uuid)
+            self.inventory.pop(item.id)
             return f"{item.name} removed!"
         else:
             return f"Inventory does not contain {item.name}"
 
     def has_item(self, item: Entity) -> bool:
-        return self.inventory.get(item.uuid) != False
+        return self.inventory.get(item.id) != False
 
     def get_items(self) -> Dict[str, Entity]:
         return self.inventory.items()

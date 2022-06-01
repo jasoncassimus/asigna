@@ -1,7 +1,8 @@
-from lib.models.entity import Room, Exit, DescriptionItem
+from lib.models.entity import Exit, DescriptionItem
 from lib.models.enums import ExitType
-
+from lib.models.room import Room
 rooms = {}
+
 
 def add_room(room: Room):
     rooms[room.name] = room
@@ -12,11 +13,6 @@ def add_room(room: Room):
 add_room(
     Room(name = 'tavern',
         description = "You're in a cozy tavern warmed by an open fire.",
-        description_items = [
-            DescriptionItem(name = 'fire',
-                            aliases = ['open fire'],
-                            description = 'A warm, inviting fire.')
-        ],
         exits = [
             Exit(name = 'outside',
                 description = 'A door leading to the outside.',

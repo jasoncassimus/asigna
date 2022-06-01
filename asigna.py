@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """A simple Multi-User Dungeon (MUD) game.
 author: Mark Frimston - mfrimston@gmail.com
     Additional code added by:
@@ -85,7 +84,6 @@ add_rooms(my_rooms)
 print_table("rooms")
 
 print_table("exits")
-
 print_table("roomExitMap")
 
 print_table("world")

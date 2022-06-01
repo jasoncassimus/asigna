@@ -9,8 +9,8 @@ from lib.models.enums import Obscuration, LightLevel
 @dataclass()
 class Room:
     id: int = None
-    name: str = "A New Zone"
-    description: str = "This zone has not been set up yet."
+    name: str = "A New Room"
+    description: str = "This room has not been set up yet."
     createdBy: str = "None"
     createdOn: str = date.today().__str__()
 

@@ -81,7 +81,7 @@ class Player(Creature, ABC):
     def __just_logged_on(self, player_input, params, commands, game):
         self.name = self.login
         game.broadcast(f"{self.name} entered the game.")
-        self.message(f"Asigna has awaited your return, {self.name}!")
+        self.message(f"Welcome home to Asigna, {self.name}!")
         self.message("Type 'help' for a list of commands. Have fun!")
         self.move(DEFAULT_START_LOCATION)
         return self.__logged_on

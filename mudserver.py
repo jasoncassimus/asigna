@@ -109,7 +109,7 @@ class MudServer(object):
         # message on its own line
         # TODO: This isn't a nice interface
         if type(to) == Client:
-            self._attempt_send(to.uuid, message+"\n\r")
+            self._attempt_send(to.id, message+"\n\r")
         else:
             self._attempt_send(to, message+"\n\r")
 
