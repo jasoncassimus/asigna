@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """A simple Multi-User Dungeon (MUD) game.
 author: Mark Frimston - mfrimston@gmail.com
     Additional code added by:
